@@ -1,0 +1,28 @@
+{
+    "HOME": {
+      "SelectService": "Sélectionnez un service",
+      "Free delivery for orders above 50$Arrives next day": "Livraison gratuite pour les commandes de plus de 50$Arrivée le lendemain",
+      "Delivery Charge applies on all orders Arrives after" : "Des frais de livraison s'appliquent à toutes les commandes Arrivé après",
+    "Summary": "Le moyen le plus simple de faire vos courses et de les faire livrer à votre porte en environ 30 ou 60 minutes en moyenne selon votre emplacement. Nous offrons une expérience d'achat d'épicerie pratique et transparente qui vous libère de la corvée inévitable de vous rendre au supermarché avec tous les défis auxquels vous pourriez être confronté. Le résultat? Plus de temps pour profiter de faire les choses que vous aimez le plus avec les personnes que vous aimez le plus",
+    "Send": "envoyer",
+    "Contact us": "Contactez-nous",
+    "Shop Now": "Achetez maintenant"
+
+     },
+     "PROD_FOOTER":{
+      "ContactUs": "Contactez-nous",
+      "Terms": "Conditions d'utilisation",
+      "Faq": "FAQs",
+      "About": "À propos de nous",
+      "Home": "Domicile",
+      "Newsroom": "Rédaction",
+      "Privacy Policy": "Politique de confidentialité",
+      "Cookies policy": "Politique de cookies"
+     },
+     "PROD_DETAIL":{
+      "Product Details": "détails du produit",
+      "Customize Lactantia Cream" : "Customize Lactantia Cream"
+     }
+
+}
+

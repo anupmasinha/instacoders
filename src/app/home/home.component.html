@@ -1,0 +1,133 @@
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" *ngFor="let data of bannerList; let i = index"
+          [ngClass]="{'active': i == 0 }" 
+     
+           [style.background-image]="'url(https://instagrocer.ca/igadmin/public/storage/' + data?.picture + ')'">
+              <div class="carousel-caption">
+                  <div class=" text-center text">
+                      <h3 class="mb-4" *ngIf="englishLang"><img src="assets/img/h-img.png">{{data?.bigCaption}}</h3>
+                      <h3 class="mb-4" *ngIf="frenchLang"><img src="assets/img/h-img.png">{{data?.bigCaption_ar}}</h3>
+                      <p *ngIf="englishLang">{{data?.pictureName}}</p>
+                      <p *ngIf="frenchLang">{{data?.pictureName_fr}}</p>
+                      <p class="h-para" *ngIf="englishLang"> {{data?.smallCaption}}</p>
+                      <p class="h-para" *ngIf="frenchLang"> {{data?.smallCaption_ar}}</p>
+                      <!-- <h6 class="text-white">Try it out  Today!</h6> -->
+                      <a class="btn" href="/products"> {{ 'HOME.Shop Now' | translate }} </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+      </header>
+      <!------- blog section starts here  ----->
+      <section class="featured-listings">
+          <div class="container-fluid">
+              <div class="row mb-1">
+                  <div class="col-md-12 text-center heading">
+                    <h2 class="mb-0"> {{ 'HOME.SelectService' | translate }}</h2>
+                      <hr>
+                  </div>
+              </div>
+<div class="col-md-9 mx-auto">
+<div class="row mt-3">
+    <div class="col-md-4 mx-auto" routerLink="/products">
+      <div class="properties-box">
+        <div class="card box1">
+          <img src="assets/img/service-1.png" alt="">
+          <div class="card-body pt-3 px-0">
+            
+            <p class="card-text para3 text-center ">{{ 'HOME.Free delivery for orders above 50$Arrives next day' | translate }} </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="col-md-4 mx-auto" routerLink="/products">
+      <div class="properties-box">
+        <div class="card box1">
+          <img  src="assets/img/service-2.png" alt="">
+          <div class="card-body pt-3 px-0">
+            
+            <p class="card-text para3 text-center">{{ 'HOME.Delivery Charge applies on all orders Arrives after' | translate }}</p>
+            <p class="time text-center"> <span>45</span> min </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+              
+          </div>
+      </section>
+
+
+<footer>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <h3 class="mb-4 ft-logo"> <img src="assets/img/h-img.png"> InstaGrocer</h3>
+      <p class="mb-4 text-justify">{{ 'HOME.Summary' | translate }}</p>
+
+      <p class="text-center social"> <a href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href=""><i class="fab fa-instagram-square" aria-hidden="true"></i></a>
+      </p>
+    </div>
+    <div class="col-md-5">
+      <div class="contact-form">
+        <h5 class="text-center mb-3">{{'HOME.Contact us' | translate}}</h5>
+        <form>
+
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Your e-mail">
+          </div>
+
+
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Your message" rows="3"></textarea>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-success">{{ 'HOME.Send' | translate }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-navs">
+    <div class="row">
+      <div class="col-md-12">
+
+        <a href="#"> {{ 'PROD_FOOTER.Home' | translate }}</a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.About' | translate }} </a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.Newrooms' | translate }} </a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.Faq' | translate }} </a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.Terms' | translate }} </a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.Privacy Policy' | translate }} </a>
+        <a class="ft-nav" href="#"> {{ 'PROD_FOOTER.Cookies policy' | translate }} </a>
+        <a class="ft-nav" href="mailto:contact@instashop.ae ">contact@instagrocer.com </a>
+        <a class="ft-nav pr-1" href=""><img src="assets/img/visa-logo.webp" alt=""></a>
+        <a href=""><img src="assets/img/mastercard-logo.webp" alt=""></a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="copy-right">
+  <p>UAE | JHGFCD Tower, TRE, TRSWD, PO Box 24644| Tel: <a href="tel:+97123456789"> +97123456789 </a> | Email: <a
+      href="mailto:contact@instagrocer.com">contact@instagrocer.com</a>
+
+  </p>
+</div>
+</footer>

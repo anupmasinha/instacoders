@@ -1,0 +1,27 @@
+ {
+  "HOME": {
+    "SelectService": "Select a service",
+    "Free delivery for orders above 50$Arrives next day": "Free delivery for orders above 50$Arrives next day",
+    "Delivery Charge applies on all orders Arrives after" : "Delivery Charge applies on all orders Arrives after",
+    "Summary": "The easiest way to shop your groceries and have them delivered to your doorstep in about 30 or 60 minutes average time depending on your location. We offer a convenient and seamless grocery shopping experience that frees you from the unavoidable chore of heading to the supermarket with all the challenges you may face there. The result? More time to enjoy doing the things you love the most with the people you love the most",
+     "Send": "Send",
+     "Contact us": "Contact us",
+     "Shop Now": "Shop Now"
+  },
+   "PROD_FOOTER":{
+    "ContactUs": "Contact Us",
+    "Terms": "Terms of service",
+    "Faq": "FAQs",
+    "About": "About us",
+    "Home": "Home",
+    "Newsroom": "Newsroom",
+    "Privacy Policy": "Privacy Policy",
+    "Cookies policy": "Cookies policy",
+    "Email": "contact@instagrocer.com"
+   },
+   "PROD_DETAIL":{
+      "Product Details": "Product Details",
+      "Customize Lactantia Cream" : "Customize Lactantia Cream"
+     }
+
+}

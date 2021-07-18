@@ -1,0 +1,28 @@
+.cart {
+    background-color: #333 ;
+    color: #fff;
+    padding-bottom: 100px;
+    min-height: 500px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    background: #ed2e5d;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 14px;
+}
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+

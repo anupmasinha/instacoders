@@ -1,0 +1,304 @@
+<section class="header fixed-top"> 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6 col-md-3 klb-clear order-xs-first"> <a class="navbar-brand" href="/" title="InstaGrocer"> <img src="assets/img/h-img.png" alt="InstaGrocer"> <span>InstaGrocer</span> </a></div><div class="col-xs-12 col-md-6">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-1 margin-auto top-categories-search-main">
+          <div class="top-categories-search">
+            <div class="dgwt-wcas-search-wrapp dgwt-wcas-has-submit woocommerce js-dgwt-wcas-layout-classic dgwt-wcas-layout-classic js-dgwt-wcas-mobile-overlay-enabled">
+              <form class="dgwt-wcas-search-form" role="search" #searchform="ngForm" (ngSubmit)="onsearchsubmit(searchform)">
+                <div class="dgwt-wcas-sf-wrapp">
+                  <label class="screen-reader-text" for="dgwt-wcas-search-input-1524">Products search</label>
+                  <input id="dgwt-wcas-search-input-1524" type="search" class="dgwt-wcas-search-input" name="searchtxt" placeholder="Search for any product" autocomplete="off" ngModel>
+                  <div class="dgwt-wcas-preloader" style="right: 91.2875px;"></div>
+                  <button type="submit" aria-label="Search" class="dgwt-wcas-search-submit"><i class="fas fa-search"></i> </button>
+                  
+                </div>
+                </form>
+                </div></div></div></div><div class="col-xs-6 col-md-3 klb-main-nav-right order-xs-second">
+                  <div class="my-lg-0 text-right">
+                    <div class="dropdown menu-link d-inline-block mr-3">
+                      <a class="btn dropdown-toggle"  role="button" id="menuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v"></i> Menu
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="menuLink">
+                        <a class="dropdown-item" href="#"><i class="far fa-user"></i> Login</a>
+                        
+                       
+                        <a class="dropdown-item" href="#"><i class="fas fa-cart-plus"></i> Suggest a product</a>
+                        <a class="dropdown-item" href="#"> <i class="fas fa-envelope"></i> Contact us</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-info-circle"></i> Terms of service</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-globe"></i> Language</a>
+                      </div>
+                    </div>
+                    <div class="dropdown lang-link d-inline-block">
+                      <a class="btn dropdown-toggle"  role="button" id="langLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-globe"></i> EN
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="langLink">
+                        <!-- <a class="dropdown-item" href="#"> <img class="lang-icon"  src="assets/img/en-icon.jpg" alt=""> EN</a>
+                        <a class="dropdown-item" href="#"> <img class="lang-icon"  src="assets/img/fr-icon.jpg" alt="">   FR</a> -->
+                        
+                      </div>
+
+                      <select class="form-control" #langs2 (change)="useLanguage(langs2.value)">
+                        <option value="en" selected="{{seletedEn}}"> English </option>
+                        <option value="fr" selected="{{seletedFr}}"> French </option>
+                      </select>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="order-online">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="media discover_products">
+                  <div class="media-left featured-services heading_secs ">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a class="link" href="/products"> View all products </a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 menu_box" *ngFor="let cat of cats">
+                        <a class="portfolio-box"  [routerLink]="['/products', 'cats', cat.cslug]">
+                          <img class="img-fluid w-100" src="{{ imgurl }}{{ cat.cimage }}" alt="">
+                          <div class="portfolio-box-caption-content">
+                            <h4>{{cat.cname}}</h4>
+                          </div>
+                        </a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                    
+                    <div class="media-body h-100 p-0 right-section">
+                      <div class=" page-info col-md-12 bg-white">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <nav class="woocommerce-breadcrumb">
+                              <a class="active" href="#"> All Items </a>
+                              <a [routerLink]="['/products', 'subcat', subcat.cslug]" *ngFor="let subcat of subCats" >{{subcat.cname}}</a>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="products_secs">
+
+                        <div class="product_box" *ngFor="let prod of productList">
+                          <div class="product-remove unselectable" *ngIf="prod.qty">
+                            <div class="product-remove-text" (click)="prod.qty? prod.qty=prod.qty-1 : ''"  >-</div>
+                          </div>
+                          <div class="product-quantity" *ngIf="prod.qty" >
+                            <div class="product-quantity-text" (click)="prod.qty? prod.qty=prod.qty+1 : prod.qty=1">x{{prod.qty}}</div>
+                          </div>
+                          <div class="card h-100">
+                            <div class="prod-img d-flex">
+                              <img class="m-auto img-fluid" (click)="checkvarient(mProds, qty, finalprice); prod.qty? prod.qty=prod.qty+1 : prod.qty=1;"  src="{{imgurl}}{{prod.pImage}}" alt="">
+                              <a class="info text-right" (click)="openModel(prod.pSlug)"  data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-info-circle"></i> </a>
+                            </div>
+                            <div class="card-footer">
+                              <div class="prod-title">
+                                <h3 *ngIf="engLang">{{prod.pName}}</h3>
+                                <h3 *ngIf="frenchLangs">{{prod.pName_ar}}</h3>
+
+                                <p class="product-packaging"></p>
+                              </div>
+                              <div class="price text-right">AED {{prod.price}}</div>
+                              
+                            </div>
+                          </div>
+                        </div>
+      
+
+                        <!-- Modal start here -->
+                        <div class="modal fade product-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeBtn>
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h5 class="modal-title" id="exampleModalLabel">{{ 'PROD_DETAIL.Product Details' | translate }} </h5>
+                              
+                              </div>
+                              <div class="modal-body">
+                              <h2 class="modal-title text-center">{{mProds.pName}}<small class="text-muted"></small></h2>
+                                <p class="text-center">
+                                  <img src="{{imgurl}}{{mProds.pImage}}" alt="">
+                                </p>
+                                <button class="btn btn-addcart mb-4 btn-lg btn-block" (click)="checkvarient(mProds, qty, finalprice)" >Add to cart (AED {{mProds.price}} )</button>
+                              </div>
+                              <div class="modal-footer d-block text-center">
+                                <button type="button" class="btn btn-instashop " data-dismiss="modal">Done </button>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <!-- Modal end here -->
+
+
+                          
+                        <!-- Second Modal start here -->
+                        <button type="button" [hidden]="true" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal2" #cmodel></button>
+
+                        <div class="modal fade product-modal prod-mdl-next" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header d-block">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeBtnModal2>
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2 *ngIf="engLang" class="modal-title pb-0 d-block text-center w-100" id="exampleModalLabel">Customize {{mProds.pName}}</h2>
+                                <h2 *ngIf="frenchLangs" class="modal-title pb-0 d-block text-center w-100" id="exampleModalLabel">Customize {{mProds.pName_ar}}</h2>
+                                  <p class="sub-title text-center mt-0 w-100"> 
+                                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                  </p>
+                              </div>
+                              <div class="modal-body  p-0">
+                                <!-- varients start here-->
+                                <div *ngIf="mProds.variants != '' ">
+                     
+                                  <div class="option optioncnt" *ngFor="let optn of mProds.variants; let i = index">
+                                   
+                                    <h6 class="list-item"> {{ optn.verientDisName }}  <button class="btn btn-link"> <i class="fas fa-times"></i> Clear</button> </h6>
+                                  
+                                    <div class="form-check mb-0 optncnt" *ngFor="let opv of optn.varientValues">
+                                      <input
+                                        type="radio"
+                                        class="form-check-input optnchk"
+                                        name="optn{{ optn.id }}"
+                                        id="opv{{ opv.id }}"
+                                        [attr.optnname]="optn.verientDisName"
+                                        [attr.optnname_ar]="optn.verientDisName"
+                                        [attr.optnid]="optn.id"
+                                        [attr.optnvalue]="opv.ovalue"
+                                        [attr.optnvalue_ar]="opv.ovalue_ar"
+                                        [attr.price]="opv.ovprice"
+                                        [attr.pvalue]="opv.id"
+                                        [attr.pid]="mProds.id"
+                                        [attr.price]="opv.price"
+                                        value="{{ opv.id }}"
+                                        (change)="chkoptvl(optvl)"
+                                        #optvl
+                                      />
+                                      <label for="opv{{ opv.id }}">{{opv.ovalue}} <span> + AED {{ opv.price }} </span></label>
+                                       
+            
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- varients end here-->
+
+
+
+                                <!-- for add addOns -->
+                                <div class="col-md-6" *ngIf="mProds.padons != ''">
+                    
+                                  <div class="option mb-2 mb-md-3" *ngFor="let adns of mProds.padons">
+                               
+                                    <h6 >{{ adns.adonDisName }}</h6>
+                                    
+                                    
+                                    <div
+                                      class="form-check overflow-hidden mb-2"
+                                      *ngFor="let adnv of adns.padonvalues"
+                                    >
+                                      <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="adon{{ adnv.id }}"
+                                        [attr.adonname]="adns.adonName"
+                                        [attr.adonid]="adns.id"
+                                        [attr.valuename]="adnv.adonValue"
+                                        [attr.valueid]="adnv.id"
+                                        [attr.pid]="mProds.id"
+                                        value="{{ adnv.adonPrice }}"
+                                        (change)="chkadonvl(adonvl)"
+                                        #adonvl
+                                      />
+                                      <label
+                                        class="form-check-label"
+                                        for="adon{{ adnv.id }}"
+                                      >
+                                        <span>{{
+                                          adnv.adonValue
+                                        }}</span>
+                                        <span> + AED {{ adnv.adonPrice }} </span>
+                                      </label>
+                                    </div>
+                                  </div> 
+                                </div>
+
+                                <!-- end addons -->
+
+
+                              </div>
+
+                            <div class="modal-footer p-0 d-block text-center">
+                                <h6 class="list-item m-0">Quantity</h6>
+                                <div class="w-100 mt-2"> <button class="qtybtnmin" (click)="desQty(qty, baseprice)" > <i class="fas fa-minus"></i> </button>
+                                <span class="qty">{{qty}}</span>
+                                <button class="qtybtnplus" (click)="incQty(qty, baseprice)"> <i class="fas fa-plus"></i> </button> </div>
+                                <button class="btn btn-addcart my-3" (click)="addtoCart(mProds, qty, finalprice)">Add to Basket </button>
+
+                            </div>
+                              
+                            </div>
+                          </div>
+                          </div>
+                          <!--Second Modal end here -->
+
+
+                      </div>
+
+<div class="footer-cartbg" *ngIf="storedCart.length > 0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 text-center">
+      <p>{{cartCount}} items</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <a href=""><i class="fas fa-home"></i> View Basket</a>
+        
+  
+      </div>
+      <div class="col-md-3 text-center">
+      <p>AED {{cartTotalPrice}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-inner text-center">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <a href=""><i class="fab fa-apple"></i> IOS</a>
+      <a href=""><i class="fab fa-android"></i> Android</a> -->
+    </div>
+    <div class="col-md-6">
+      <a href=""><i class="fas fa-home"></i></a>
+      <a class="ft-nav" href="">{{ 'PROD_FOOTER.About' | translate }}</a>
+      <a class="ft-nav" href="">{{ 'PROD_FOOTER.Faq' | translate }}</a>
+      <a class="ft-nav" href="">{{ 'PROD_FOOTER.Terms' | translate }}</a>
+      <a class="ft-nav" href="">{{ 'PROD_FOOTER.ContactUs' | translate }}</a>
+      <!-- <a class="ft-nav" href="">{{ 'HOME.Hello' | translate }}</a>  -->
+    </div>
+    <div class="col-md-3">
+      <a href=""><i class="fab fa-facebook"></i></a>
+      <a href=""><i class="fab fa-instagram-square"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+  

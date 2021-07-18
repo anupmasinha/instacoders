@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title> InstaGrocer </title>
+    <base href="/">
+		<!-- Custom fonts for this theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://kit.fontawesome.com/685b6f4a9a.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<!-- Theme CSS -->
+		<link href="assets/css/layout.css" rel="stylesheet">
+	</head>
+<body>
+  <app-root></app-root>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  <!-- Custom scripts for this template -->
+  <script src="assets/js/mainjavascript.js"></script>
+  <!-- Frontpage Demo -->
+
+
+  <script>
+		$(document).ready(function() {
+		$('#orderNowmodl').on('shown.bs.modal', function() {
+		$('#mobileNum').trigger('focus');
+		});
+		});
+		</script>
+
+                  <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 15,
+        spaceBetween: 5,
+        grabCursor: true,
+        freeMode: true,
+        loop: false,
+        loopFillGroupWithBlank: true,
+        
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+ 
+
+</body>
+</html>
